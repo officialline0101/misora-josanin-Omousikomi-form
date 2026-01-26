@@ -448,7 +448,7 @@
             </div>
         </div>
 
-        <div class="label" id="kibou3">希望日時3<span class="required">必須</span></div>
+        <div class="label" id="kibou3">希望日時3</div>
         <div class="datetime-wrapper">
             <input type="hidden" id="date3" name="date3">
             <div class="dt-grid">
@@ -623,7 +623,7 @@ function updateHiddenAndPlaceholder(baseId) {
         /* ========== 初期化 ========== */
         document.addEventListener('DOMContentLoaded', function () {
             liff.init({
-                liffId: '2008660993-jKWLQg15'
+                liffId: '2008879195-Mya9dL2a'
             }).then(() => {
                 console.log('LIFF初期化成功');
             }).catch((err) => {
@@ -827,7 +827,8 @@ function updateHiddenAndPlaceholder(baseId) {
             if (!formData.phone) { alert('電話番号を入力してください。'); return; }
             if (!formData.visitCount) { alert('ご利用回数を選択してください。'); return; }
             if (formData.selectedSymptom.length === 0) { alert('メニューを選択してください。'); return; }
-            if (!formData.date1 && !formData.date2 && !formData.date3) { alert('希望日時を入力してください。'); return; }
+            if (!formData.date1) { alert('希望日時1を入力してください。'); return; }
+            if (!formData.date2) { alert('希望日時2を入力してください。'); return; }
 
             const symptomText = formData.selectedSymptom.map(item => item.name).join(',');
             const datesText = `\n第1希望: ${formatDt(formData.date1)}\n第2希望: ${formatDt(formData.date2)}\n第3希望: ${formatDt(formData.date3)}`;
