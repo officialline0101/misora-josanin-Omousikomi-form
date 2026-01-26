@@ -560,14 +560,15 @@
             }
         }
 
-        function updateHiddenAndPlaceholder(baseId) {
-            const day = document.getElementById(`${baseId}_day`).value;
-            const time = document.getElementById(`${baseId}_time`).value;
-            const hidden = document.getElementById(baseId);
-            hidden.value = day && time ? `${day}T${time}` : "";
-            saveInput(baseId);
-            updateDisplayInfo();
-        }
+// 修正後
+function updateHiddenAndPlaceholder(baseId) {
+    const day = document.getElementById(`${baseId}_day`).value;
+    const time = document.getElementById(`${baseId}_time`).value;
+    const hidden = document.getElementById(baseId);
+    hidden.value = day && time ? `${day}T${time}` : "";
+    // saveInput(baseId); // 保存処理をコメントアウトまたは削除
+    updateDisplayInfo();
+}
 
         function restoreIfAny(baseId) {
             const val = localStorage.getItem(baseId);
@@ -617,13 +618,12 @@
                 updateHiddenAndPlaceholder(baseId);
             });
             timeSel.addEventListener('change', () => updateHiddenAndPlaceholder(baseId));
-            restoreIfAny(baseId);
         }
 
         /* ========== 初期化 ========== */
         document.addEventListener('DOMContentLoaded', function () {
             liff.init({
-                liffId: '2008879195-Mya9dL2a'
+                liffId: '2008660993-jKWLQg15'
             }).then(() => {
                 console.log('LIFF初期化成功');
             }).catch((err) => {
@@ -843,4 +843,3 @@
     </script>
 </body>
 </html>
-
